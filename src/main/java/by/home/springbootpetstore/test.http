@@ -2,7 +2,7 @@ POST http://localhost:8080/tag
 Content-Type: application/json
 
 {
-"name":"test2"
+"name":"animal"
 }
 
 ###
@@ -11,7 +11,7 @@ POST http://localhost:8080/category
 Content-Type: application/json
 
 {
-  "name":"category2"
+  "name":"with legs"
 }
 
 ###
@@ -43,7 +43,7 @@ Content-Type: application/json
 
 {
   "category": {
-    "id": 1
+    "id": 0
   },
   "name": "dmkkk",
   "tags": [
@@ -64,15 +64,6 @@ GET http://localhost:8080/pet/findByStatus?status=AVAILABLE
 
 ###
 
-POST http://localhost:8080/pet/0
-Content-Type: application/json
-
-{
-  "id": 0,
-  "name": "dog",
-  "status": "Sold"
-}
-###
 
 GET http://localhost:8080/pet/0
 
@@ -86,7 +77,6 @@ POST http://localhost:8080/store/order
 Content-Type: application/json
 
 {
-  "id": 0,
   "petId": 1,
   "quantity": 0,
   "shipDate": "2021-02-24T11:39:34.739Z",
@@ -108,3 +98,93 @@ GET http://localhost:8080/store/inventory
 ######################################################################################################################
 
 
+POST http://localhost:8080/user
+Content-Type: application/json
+
+{
+  "username": "Filipok",
+  "firstName": "Filip",
+  "lastName": "Durex",
+  "email": "golovaTitana@gmail.com",
+  "password": "samec",
+  "phone": "+375296969696",
+  "userStatus": 1
+}
+
+###
+
+POST http://localhost:8080/user/createWithArray
+Content-Type: application/json
+
+[
+  {
+    "username": "Filipok",
+    "firstName": "Filip",
+    "lastName": "Durex",
+    "email": "golovaTitana@gmail.com",
+    "password": "samec",
+    "phone": "+375296969696",
+    "userStatus": 1
+  },
+  {
+    "username": "sac",
+    "firstName": "Kirill",
+    "lastName": "Sev",
+    "email": "maile@gmail.com",
+    "password": "amlknvjb9",
+    "phone": "+375290000000",
+    "userStatus": 0
+  }
+]
+
+###
+
+POST http://localhost:8080/user/createWithList
+Content-Type: application/json
+
+[
+  {
+    "username": "Filipok",
+    "firstName": "Filip",
+    "lastName": "Durex",
+    "email": "golovaTitana@gmail.com",
+    "password": "samec",
+    "phone": "+375296969696",
+    "userStatus": 1
+  },
+  {
+    "username": "sac",
+    "firstName": "Kirill",
+    "lastName": "Sev",
+    "email": "maile@gmail.com",
+    "password": "amlknvjb9",
+    "phone": "+375290000000",
+    "userStatus": 0
+  }
+]
+
+
+###
+
+
+GET http://localhost:8080/user/sac
+
+
+###
+
+PUT http://localhost:8080/user/sac
+Content-Type: application/json
+
+{
+  "username": "update",
+  "firstName": "update",
+  "lastName": "update",
+  "email": "update",
+  "password": "update",
+  "phone": "update",
+  "userStatus": 99
+}
+
+###
+
+DELETE http://localhost:8080/user/sac

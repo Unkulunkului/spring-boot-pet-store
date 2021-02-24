@@ -55,12 +55,6 @@ public class PetResource {
         }
     }
 
-//    @PostMapping("")
-//    public ResponseEntity<Pet> updateById(@RequestBody PetDTO pet){
-//        petService.updateById(pet);
-//        return new ResponseEntity<>(HttpStatus.OK);
-//    }
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Pet> deleteById(@PathVariable("id") long id){
         if (petService.deleteById(id)) {
