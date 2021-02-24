@@ -18,7 +18,7 @@ public class InMemoryUserStorage {
         user.setId(gen++);
         return userList.add(user);
     }
-
+//Один метод add, добавление из листов в сервисах
     public boolean addAllList(List<User> users){
         for (User user : users) {
             user.setId(gen++);
