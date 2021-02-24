@@ -2,6 +2,7 @@ package by.home.springbootpetstore.resource;
 
 import by.home.springbootpetstore.model.User;
 import by.home.springbootpetstore.service.UserService;
+import by.home.springbootpetstore.storage.InMemoryUserStorage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,9 +44,9 @@ public class UserResource {
         return new ResponseEntity<>(byUserName, HttpStatus.NOT_FOUND);
     }
 
-    @PutMapping("/{userName}") //////??????
-    public ResponseEntity<User> updateUserName(@PathVariable("userName")String userName, User user){
-        if (userService.updateByUserName(user)) {
+    @PutMapping("/{userName}")
+    public ResponseEntity<User> updateUserName(@PathVariable("userName")String userName, @RequestBody User user){
+        if (userService.updateByUserName(user, userName)) {
             return new ResponseEntity<>(HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -58,4 +59,5 @@ public class UserResource {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
 }

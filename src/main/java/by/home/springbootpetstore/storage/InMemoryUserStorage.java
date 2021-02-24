@@ -42,9 +42,11 @@ public class InMemoryUserStorage {
         return null;
     }
 
-    public boolean updateByUserName(User user){
+    public boolean updateByUserName(User user, String userName){
         for (int i = 0; i < userList.size(); i++) {
-            if (userList.get(i).getUsername().equals(user.getUsername())) {
+            User userFromList = userList.get(i);
+            if (userFromList.getUsername().equals(userName)) {
+                user.setId(userFromList.getId());
                 userList.set(i,user);
                 return true;
             }
@@ -61,5 +63,4 @@ public class InMemoryUserStorage {
         }
         return false;
     }
-
 }

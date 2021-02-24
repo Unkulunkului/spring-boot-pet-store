@@ -28,8 +28,8 @@ public class UserService {
         return inMemoryUserStorage.getByUserName(userName);
     }
 
-    public boolean updateByUserName(User user){
-        return inMemoryUserStorage.updateByUserName(user);
+    public boolean updateByUserName(User user, String userName){
+        return inMemoryUserStorage.updateByUserName(user, userName);
     }
 
     public boolean deleteByUserName(String userName){
