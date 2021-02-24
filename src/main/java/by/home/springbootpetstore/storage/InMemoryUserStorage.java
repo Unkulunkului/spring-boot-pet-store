@@ -19,19 +19,19 @@ public class InMemoryUserStorage {
         return userList.add(user);
     }
 //Один метод add, добавление из листов в сервисах
-    public boolean addAllList(List<User> users){
-        for (User user : users) {
-            user.setId(gen++);
-        }
-        return userList.addAll(users);
-    }
+  //  public boolean addAllList(List<User> users){
+    //    for (User user : users) {
+        //    user.setId(gen++);
+     //   }
+      //  return userList.addAll(users);
+  //  }
 
-    public void addAllArray(User [] users){
-        for (User user : users) {
-            user.setId(gen++);
-            userList.add(user);
-        }
-    }
+  //  public void addAllArray(User [] users){
+      //  for (User user : users) {
+        //    user.setId(gen++);
+          //  userList.add(user);
+    //    }
+ //   }
 
     public User getByUserName(String userName){
         for (User userFromList : userList) {
