@@ -1,0 +1,72 @@
+POST http://localhost:8080/tag
+Content-Type: application/json
+
+{
+"name":"test2"
+}
+
+###
+
+POST http://localhost:8080/category
+Content-Type: application/json
+
+{
+  "name":"category2"
+}
+
+###
+
+PUT http://localhost:8080/pet
+Content-Type: application/json
+
+{
+  "category": {
+    "id": 1
+  },
+  "name": "doggie",
+  "tags": [
+    {
+      "id": 0
+    }
+  ,
+    {
+      "id": 1
+    }
+  ],
+  "status": "SOLD"
+}
+
+
+###
+POST http://localhost:8080/pet
+Content-Type: application/json
+
+{
+  "category": {
+    "id": 1
+  },
+  "name": "doggie",
+  "tags": [
+    {
+      "id": 0
+    }
+    ,
+    {
+      "id": 1
+    }
+  ],
+  "status": "AVAILABLE"
+}
+
+###
+
+GET http://localhost:8080/pet/findByStatus?status=AVAILABLE
+
+###
+
+GET http://localhost:8080/pet/0
+
+###
+
+DELETE http://localhost:8080/pet/0
+
