@@ -1,5 +1,6 @@
 package by.home.springbootpetstore.resource;
 
+import by.home.springbootpetstore.model.OrderStatusEnum;
 import by.home.springbootpetstore.model.Pet;
 import by.home.springbootpetstore.model.PetDTO;
 import by.home.springbootpetstore.model.PetStatusEnum;
@@ -10,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping(path = "/pet")
@@ -53,10 +55,11 @@ public class PetResource {
         }
     }
 
-    @PostMapping("/{id}") //??????
-    public ResponseEntity<Pet> updateById(@RequestBody PetDTO pet){
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
+//    @PostMapping("")
+//    public ResponseEntity<Pet> updateById(@RequestBody PetDTO pet){
+//        petService.updateById(pet);
+//        return new ResponseEntity<>(HttpStatus.OK);
+//    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Pet> deleteById(@PathVariable("id") long id){

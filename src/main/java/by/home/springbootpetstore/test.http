@@ -45,7 +45,7 @@ Content-Type: application/json
   "category": {
     "id": 1
   },
-  "name": "doggie",
+  "name": "dmkkk",
   "tags": [
     {
       "id": 0
@@ -64,9 +64,47 @@ GET http://localhost:8080/pet/findByStatus?status=AVAILABLE
 
 ###
 
+POST http://localhost:8080/pet/0
+Content-Type: application/json
+
+{
+  "id": 0,
+  "name": "dog",
+  "status": "Sold"
+}
+###
+
 GET http://localhost:8080/pet/0
 
 ###
 
 DELETE http://localhost:8080/pet/0
+
+######################################################################################################################
+
+POST http://localhost:8080/store/order
+Content-Type: application/json
+
+{
+  "id": 0,
+  "petId": 1,
+  "quantity": 0,
+  "shipDate": "2021-02-24T11:39:34.739Z",
+  "status": "APPROVED",
+  "complete": true
+}
+###
+
+GET http://localhost:8080/store/order/1
+
+###
+
+DELETE http://localhost:8080/store/order/1
+
+###
+
+GET http://localhost:8080/store/inventory
+
+######################################################################################################################
+
 
