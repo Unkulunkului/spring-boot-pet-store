@@ -1,8 +1,6 @@
 package by.home.springbootpetstore.resource;
 
-import by.home.springbootpetstore.model.OrderStatusEnum;
 import by.home.springbootpetstore.model.Pet;
-import by.home.springbootpetstore.model.PetDTO;
 import by.home.springbootpetstore.model.PetStatusEnum;
 import by.home.springbootpetstore.service.PetService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping(path = "/pet")

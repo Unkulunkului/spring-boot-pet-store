@@ -1,7 +1,6 @@
 package by.home.springbootpetstore.resource;
 
 import by.home.springbootpetstore.model.Order;
-import by.home.springbootpetstore.model.OrderStatusEnum;
 import by.home.springbootpetstore.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
