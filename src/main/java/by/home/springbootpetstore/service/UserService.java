@@ -13,15 +13,19 @@ public class UserService {
     private InMemoryUserStorage inMemoryUserStorage;
 
     public boolean save(User user){
-        return inMemoryUserStorage.createUser(user);
+        return inMemoryUserStorage.add(user);
     }
 
-    public boolean addAllList(List<User> users){
-        return inMemoryUserStorage.addAllList(users);
+    public void addAllList(List<User> users){
+        for (User user : users) {
+            inMemoryUserStorage.add(user);
+        }
     }
 
     public void addAllArray(User [] users){
-        inMemoryUserStorage.addAllArray(users);
+        for (User user : users) {
+            inMemoryUserStorage.add(user);
+        }
     }
 
     public User getByUserName(String userName){
