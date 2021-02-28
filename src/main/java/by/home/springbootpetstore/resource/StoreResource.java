@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Map;
 
 @RestController
@@ -17,7 +18,7 @@ public class StoreResource {
     private StoreService storeService;
 
     @PostMapping("/order")
-    public ResponseEntity<Order> saveOrder(@RequestBody Order order){
+    public ResponseEntity<Order> saveOrder(@Valid @RequestBody Order order){
         storeService.save(order);
         return new ResponseEntity<>(order, HttpStatus.OK);
     }

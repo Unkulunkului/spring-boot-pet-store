@@ -65,7 +65,7 @@ GET http://localhost:8080/pet/findByStatus?status=AVAILABLE
 ###
 
 
-GET http://localhost:8080/pet/0
+GET http://localhost:8080/pet/9
 
 ###
 
@@ -105,7 +105,7 @@ Content-Type: application/json
   "username": "Filipok",
   "firstName": "Filip",
   "lastName": "Durex",
-  "email": "golovaTitana@gmail.com",
+  "email": "golova@gmail.com",
   "password": "samec",
   "phone": "+375296969696",
   "userStatus": 1

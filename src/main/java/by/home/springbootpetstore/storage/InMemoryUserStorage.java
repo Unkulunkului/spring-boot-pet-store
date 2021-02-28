@@ -2,6 +2,7 @@ package by.home.springbootpetstore.storage;
 
 
 import by.home.springbootpetstore.model.User;
+import by.home.springbootpetstore.service.exception.NotFoundException;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class InMemoryUserStorage {
                 return userFromList;
             }
         }
-        return null;
+        throw new NotFoundException("User not found");
     }
 
     public boolean updateByUserName(User user, String userName){

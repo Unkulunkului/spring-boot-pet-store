@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping(path = "/category")
 public class CategoryResource {
@@ -19,7 +21,7 @@ public class CategoryResource {
     private CategoryService categoryService;
 
     @PostMapping
-    public ResponseEntity<Category> saveCategory(@RequestBody Category category){
+    public ResponseEntity<Category> saveCategory(@Valid @RequestBody Category category){
         categoryService.save(category);
         return new ResponseEntity<>(category, HttpStatus.CREATED);
     }
