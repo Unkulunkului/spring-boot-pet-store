@@ -2,7 +2,6 @@ package by.home.springbootpetstore.resource;
 
 import by.home.springbootpetstore.model.User;
 import by.home.springbootpetstore.service.UserService;
-import by.home.springbootpetstore.storage.InMemoryUserStorage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -65,7 +65,7 @@ GET http://localhost:8080/pet/findByStatus?status=AVAILABLE
 ###
 
 
-GET http://localhost:8080/pet/9
+GET http://localhost:8080/pet/94j
 
 ###
 
@@ -100,6 +100,7 @@ GET http://localhost:8080/store/inventory
 
 POST http://localhost:8080/user
 Content-Type: application/json
+X-Token: 123456
 
 {
   "username": "Filipok",

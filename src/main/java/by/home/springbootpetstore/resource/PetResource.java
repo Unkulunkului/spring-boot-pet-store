@@ -41,7 +41,7 @@ public class PetResource {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Pet> findById(@PathVariable("id") long id){
+    public ResponseEntity<Pet> findById(@Valid @PathVariable("id") long id){
         Pet byStatus = petService.getById(id);
         if (byStatus != null) {
             return new ResponseEntity<>(byStatus, HttpStatus.OK);
